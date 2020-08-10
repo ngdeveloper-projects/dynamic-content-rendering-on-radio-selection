@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dynamic content rendering on radio button change,dynamic div rendering in html, render div dynamically, radio button change to render div, radio change to render content, content render on radio change">
+    <meta name="author" content="Naveenkumar Gunasekaran">
+
+    <title>Dynamic content rendering on radio button change | Demo Javadomain.in</title>
+
+	<!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	
+	<!-- BootStrap JS -->
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+	
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+	
+	<!--[if lt IE 9]><script src="http://getbootstrap.com/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+	<!-- loading js -->
+	<script src="http://malsup.github.io/jquery.blockUI.js"></script>
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+ <script type="text/javascript">
+ // method to animate the content after radio button change
+ function animateMe(divID,fontValue){
+ 	   $( divID )
+    .animate({
+      width: "100%"
+    }, {
+      queue: false,
+      duration: 3000
+    })
+    .animate({ fontSize: fontValue }, 1500 )
+    .animate({ borderRightWidth: "15px" }, 1500 );
+ }
+ </script>
+  </head>
+
+  <body>
+
+    
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Demo</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://www.javadomain.in">Javadomain.in</a></li>         
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+	  
+	  <div class="container" style="margin-top:100px;">
+      
+	   <script type="text/javascript">
+	   $(document).ready(function(){
+ $('div#root1').hide();
+ // called when radio button changed
+ $("input[name='topics']").change(function() {
+ slctdTopicsRdio = $("input[name='topics']:checked").val();
+			   slctdTopicsRdioDiv = slctdTopicsRdio+'Div';
+			  $('div#root1').show();
+			$('#'+slctdTopicsRdioDiv).show(); 
+            $('#root1 div').not('#'+slctdTopicsRdioDiv).hide();  // hide all but the relevant div
+		$('#'+slctdTopicsRdioDiv).children().show(); 
+			   animateMe('#'+slctdTopicsRdioDiv,"24px");
+			 $(window).scrollTop($('#'+slctdTopicsRdioDiv).offset().top);
+        });
+		});
+</script>
+   
+   <form name="root" id="root">
+   <div class="row">
+		
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio" name="topics" value="Search" id="Search"><b>Search Engine</b> </div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio"  name="topics" value="Social" id="Social"><b>Social Networks</b></div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio" name="topics" value="Shopping" id="Shopping"><b>Shopping websites</b></div>
+	</div>
+	</form>
+  </div>
+     <div class="row"> 
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Single post - 2 (www.javadomain.in) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1630317480583873"
+     data-ad-slot="1031934524"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div> 
+ 
+  
+    <script type="text/javascript">
+	$(document).ready(function(){
+
+	$("input[name='SearchTopics']").change(function() {
+ slctdTopicsRdio = $("input[name='SearchTopics']:checked").val();
+			   slctdTopicsRdioDiv = slctdTopicsRdio+'Div';
+			$('#'+slctdTopicsRdioDiv).show(); 
+            $('#root2 div').not('#'+slctdTopicsRdioDiv).hide();  // hide all but the relevant div
+		$('#'+slctdTopicsRdioDiv).children().show(); 
+			   animateMe('#'+slctdTopicsRdioDiv,"30px");
+			   // to scroll the content to the display part
+			 $(window).scrollTop($('#'+slctdTopicsRdioDiv).offset().top);
+        });
+		});
+</script>
+  <div class="container" id="root1">
+  <div id="SearchDiv" class="row" style="display:none;"> 
+    <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio" name="SearchTopics" value="Google" id="Google">Google[select this radio button]</div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio"  name="SearchTopics" value="Yahoo" id="Yahoo">Yahoo</div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio" name="SearchTopics" value="Bing" id="Bing">Bing</div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio" name="SearchTopics" value="Duckduckgo" id="Duckduckgo">Duckduckgo</div>
+</div>
+  <div id="SocialDiv" class="row" style="display:none;">
+    <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio" name="SocialDiv" value="and" id="and">Facebook</div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio"  name="SocialDiv" value="or" id="or">Twitter</div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio" name="SocialDiv" value="bitwise" id="bitwise">Google Plus</div>
+  </div>
+   <div id="ShoppingDiv" class="row" style="display:none;">
+    <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio" name="ShoppingDiv" value="flipkart" id="flipkart">Flipkart</div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio"  name="ShoppingDiv" value="amazon" id="amazon">Amazon</div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio" name="ShoppingDiv" value="ebay" id="ebay">Ebay</div>
+  </div>
+  
+  </div>
+  <div class="container" id="root2">
+  <div id="GoogleDiv" class="row" style="display:none;"> 
+    <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio" name="GoogleTopics" value="Gmail" id="Gmail">Gmail</div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio"  name="GoogleTopics" value="Plus" id="Plus">Google Plus</div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio"  name="GoogleTopics" value="News" id="News">Google News</div>
+   <div class="col-md-12 col-xs-12 col-sm-12"><input type="radio"  name="GoogleTopics" value="Android" id="Android">Android</div>
+</div>
+  
+  </div>
+<br/>
+
+  <div class="row"> 
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Single post - 2 (www.javadomain.in) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1630317480583873"
+     data-ad-slot="1031934524"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div> 
+   <div class="row"> 
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Single post - 2 (www.javadomain.in) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1630317480583873"
+     data-ad-slot="1031934524"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div> 
+	  <br/>
+	  <br/>
+	  <div class="footer navbar-default">
+ <div class="container">
+    <div class="row"><div class="col-md-12 text-center"><h4><a href="http://www.mirthbees.com" target="_blank">Mirthbees</a> Release with <a href="http://www.javadomain.in" target="_blank">Javadomain.in</a> | Happy Learning!</h4></div></div>
+
+</div>
+</div>
+
+  </body>
+</html>
